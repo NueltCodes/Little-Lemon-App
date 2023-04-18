@@ -3,7 +3,6 @@ import { StyleSheet, View, Text, TextInput, TouchableOpacity, ScrollView, Keyboa
 import { useNavigation } from '@react-navigation/native';
 import { MaterialIcons } from '@expo/vector-icons';
 import * as ImagePicker from 'expo-image-picker';
-import Constants from 'expo-constants';
 
 export default function OnboardingScreen () {
   const [firstName, setFirstName] = useState('');
@@ -15,9 +14,12 @@ export default function OnboardingScreen () {
 
   const navigation = useNavigation();
 
+
   const handleSaveChanges = () => {
-    // Save changes to disk
-  };
+    // do some work to save changes
+    // navigate to the home page
+    navigation.navigate('Home');
+  }
 
   const handleLogout = () => {
     // Clear all data from disk
