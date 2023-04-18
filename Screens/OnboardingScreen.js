@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, View, Text, TextInput, TouchableOpacity } from 'react-native';
+import { StyleSheet, View, Text, TextInput, TouchableOpacity, ScrollView, KeyboardAvoidingView } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { MaterialIcons } from '@expo/vector-icons';
 import * as ImagePicker from 'expo-image-picker';
@@ -44,7 +44,9 @@ export default function OnboardingScreen () {
   };
 
   return (
-    <View style={styles.container}>
+    <ScrollView>
+        <KeyboardAvoidingView behavior="padding">
+<View style={styles.container}>
       <View style={styles.profileHeader}>
         {image ? (
           <TouchableOpacity onPress={pickImage}>
@@ -93,6 +95,8 @@ export default function OnboardingScreen () {
         </TouchableOpacity>
       </View>
     </View>
+    </KeyboardAvoidingView>
+    </ScrollView>
   );
 };
 

@@ -5,6 +5,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 // import SplashScreen from './screens/SplashScreen';
 import OnboardingScreen from './Screens/OnboardingScreen';
 import ProfileScreen from './Screens/ProfileScreen';
+import HomeScreen from './Screens/HomeScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -43,12 +44,15 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
         {isOnboardingCompleted ? (
+          <>
+     <Stack.Screen name="Home" component={HomeScreen} />
           // Onboarding completed, user is signed in
           <Stack.Screen name="Profile" component={ProfileScreen} />
+          </>
         ) : (
           // User is NOT signed in
-          <Stack.Screen name="Onboarding" component={OnboardingScreen} />
-        )}
+               <Stack.Screen name="Home" component={HomeScreen} />
+          )}
       </Stack.Navigator>
     </NavigationContainer>
   );
