@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import React, { useEffect, useState } from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 // import AsyncStorage from '@react-native-async-storage/async-storage';
 // import SplashScreen from './screens/SplashScreen';
-import OnboardingScreen from './Screens/OnboardingScreen';
-import ProfileScreen from './Screens/ProfileScreen';
-import HomeScreen from './Screens/HomeScreen';
+import OnboardingScreen from "./Screens/OnboardingScreen";
+import ProfileScreen from "./Screens/ProfileScreen";
+import HomeScreen from "./Screens/HomeScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -42,12 +42,11 @@ export default function App() {
 
   return (
     <NavigationContainer>
-  <Stack.Navigator initialRouteName='Onboarding'>
-    <Stack.Screen name="Profile" component={ProfileScreen} />
-    <Stack.Screen name="Home" component={HomeScreen} />
-    <Stack.Screen name="Onboarding" component={OnboardingScreen} />
-  </Stack.Navigator>
-</NavigationContainer>
-
+      <Stack.Navigator initialRouteName="Onboarding">
+        <Stack.Screen name="Profile" component={ProfileScreen} />
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Onboarding" component={OnboardingScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
